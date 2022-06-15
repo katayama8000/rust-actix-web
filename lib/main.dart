@@ -66,7 +66,7 @@ class _HomeState extends State<Home> {
       ),
       body: FirebaseAnimatedList(
         query: ref,
-        shrinkWrap: true,
+        //shrinkWrap: true,
         itemBuilder: (context, snapshot, animation, index) {
           return GestureDetector(
             onTap: () {},

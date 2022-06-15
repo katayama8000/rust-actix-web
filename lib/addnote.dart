@@ -13,49 +13,51 @@ class addnote extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add Todos"),
+        title: const Text("Add Todos"),
         backgroundColor: Colors.indigo[900],
       ),
-      body: Container(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 10,
-            ),
-            Container(
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Container(
               decoration: BoxDecoration(border: Border.all()),
               child: TextField(
                 controller: title,
-                decoration: InputDecoration(
-                  hintText: 'title',
+                decoration: const InputDecoration(
+                  hintText: 'add todo list',
+                  border: InputBorder.none,
                 ),
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            MaterialButton(
-              color: Colors.indigo[900],
-              onPressed: () {
-                ref
-                    .push()
-                    .set(
-                      title.text,
-                    )
-                    .asStream();
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => Home()));
-              },
-              child: Text(
-                "save",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          MaterialButton(
+            color: Colors.indigo[900],
+            onPressed: () {
+              ref
+                  .push()
+                  .set(
+                    title.text,
+                  )
+                  .asStream();
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (_) => Home()));
+            },
+            child: const Text(
+              "save",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
